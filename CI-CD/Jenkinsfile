@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage('Cleanup Workspace') {
+            steps {
+                deleteDir() // This will clean the workspace before each build
+            }
+        }
         stage('Checkout') {
             steps {
                 sh 'echo passed'
