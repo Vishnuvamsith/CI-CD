@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        docker {
+            image 'abhishekf5/maven-abhishek-docker-agent:v1'
+            args '--user root -v'
+        }
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                sh 'echo passed'
+            }
+        }
+        stage('Build and Test') {
+            steps {
+                // List files for verification
+                sh 'ls -ltr'
+
+                // Build the project and create a JAR file
+                sh '''
+                    cd cicd/ci-cd
+                    mvn clean package
+                '''
+            }
+        }
+    }
+}
