@@ -18,7 +18,6 @@ pipeline {
 
                 // Build the project and create a JAR file
                 sh '''
-                    cd ci-cd
                     mvn clean package
                 '''
             }
