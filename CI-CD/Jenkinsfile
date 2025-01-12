@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'openjdk:17-jdk-alpine'
+            image 'abhishekf5/maven-abhishek-docker-agent:v1'
             args '--user root'
         }
     }
