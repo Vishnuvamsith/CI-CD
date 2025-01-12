@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'openjdk:17-jdk-alpine'
-            args '--user root -v'
+            args '--user root'
         }
     }
     stages {
