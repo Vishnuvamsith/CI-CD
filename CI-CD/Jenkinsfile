@@ -17,6 +17,10 @@ pipeline {
         sh 'ls -ltr'
         // build the project and create a JAR file
         sh 'cd CI-CD && mvn clean package'
+        sh '''
+      apt-get update && apt-get install -y docker.io
+      docker --version
+    '''
       }
     }
     stage('Static Code Analysis') {
